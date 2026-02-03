@@ -1081,12 +1081,14 @@ footer {
     border-radius: 20px;
     width: 90%;
     max-width: 450px;
-    max-height: 80vh;
-    overflow: hidden;
+    max-height: 85vh;
     transform: scale(0.8) translateY(20px);
     transition: all 0.3s ease;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     border: 2px solid #f2f0c4;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .checkout-modal-overlay.show .checkout-modal {
@@ -1098,6 +1100,7 @@ footer {
     padding: 1.5rem;
     text-align: center;
     border-bottom: 1px solid #f2f0c4;
+    flex-shrink: 0;
 }
 
 .checkout-modal-header h3 {
@@ -1114,8 +1117,59 @@ footer {
 
 .checkout-modal-body {
     padding: 1.5rem;
-    max-height: 350px;
     overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Custom Scrollbar for Modal */
+.checkout-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.checkout-modal-body::-webkit-scrollbar-track {
+    background: #3a3929;
+    border-radius: 10px;
+}
+
+.checkout-modal-body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8a9a5b 0%, #6b7a4a 100%);
+    border-radius: 10px;
+    border: 2px solid #3a3929;
+}
+
+.checkout-modal-body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #9aaa6b 0%, #7b8a5a 100%);
+}
+
+/* Firefox scrollbar */
+.checkout-modal-body {
+    scrollbar-width: thin;
+    scrollbar-color: #8a9a5b #3a3929;
+}
+
+/* Cart content scrollbar */
+.cart-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cart-content::-webkit-scrollbar-track {
+    background: #3a3929;
+    border-radius: 10px;
+}
+
+.cart-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f2f0c4 0%, #d9d592 100%);
+    border-radius: 10px;
+}
+
+.cart-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #fff 0%, #f2f0c4 100%);
+}
+
+.cart-content {
+    scrollbar-width: thin;
+    scrollbar-color: #f2f0c4 #3a3929;
 }
 
 .checkout-section {
@@ -1182,6 +1236,7 @@ footer {
     background: linear-gradient(135deg, #5a5840 0%, #4d4b36 100%);
     padding: 1.5rem;
     border-top: 1px solid #5a5840;
+    flex-shrink: 0;
 }
 
 .checkout-total {
