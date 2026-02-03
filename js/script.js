@@ -39,14 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Cart Data Management ---
     let cart = {
         food: [],
-        rooms: []
+        rooms: [],
+        services: []
     };
 
     // Load cart from localStorage
     const loadCart = () => {
         const savedCart = localStorage.getItem('oliveGardenCart');
         if (savedCart) {
-            cart = JSON.parse(savedCart);
+            const parsed = JSON.parse(savedCart);
+            cart = {
+                food: parsed.food || [],
+                rooms: parsed.rooms || [],
+                services: parsed.services || []
+            };
         }
     };
 
@@ -111,6 +117,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Switch to specific tab ---
+    const switchToTab = (tabName) => {
+        const tabs = document.querySelectorAll('.tab-link');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+            if (tab.dataset.tab === tabName) {
+                tab.classList.add('active');
+            }
+        });
+
+        contents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === tabName) {
+                content.classList.add('active');
+            }
+        });
+    };
+
     // --- Add Food to Cart ---
     const addFoodToCart = (id, name, price) => {
         const existingItem = cart.food.find(item => item.id === id);
@@ -126,6 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         saveCart();
         renderCart();
+        switchToTab('cart-food');
+        openCart();
         showNotification(`${name} added to cart!`);
     };
 
@@ -144,7 +172,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         saveCart();
         renderCart();
+        switchToTab('cart-rooms');
+        openCart();
         showNotification(`${name} booked for ${nights} night(s)!`);
+    };
+
+    // --- Add Service to Cart ---
+    const addServiceToCart = (id, name, price) => {
+        // Ensure services array exists
+        if (!cart.services) cart.services = [];
+
+        const existingService = cart.services.find(item => item.id === id);
+        if (existingService) {
+            existingService.quantity += 1;
+        } else {
+            cart.services.push({
+                id: id,
+                name: name,
+                price: parseFloat(price),
+                quantity: 1
+            });
+        }
+        saveCart();
+        renderCart();
+        switchToTab('cart-services');
+        openCart();
+        showNotification(`${name} added to cart!`);
     };
 
     // --- Remove Item from Cart ---
@@ -153,6 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.food = cart.food.filter(item => item.id !== id);
         } else if (type === 'rooms') {
             cart.rooms = cart.rooms.filter(item => item.id !== id);
+        } else if (type === 'services') {
+            cart.services = cart.services.filter(item => item.id !== id);
         }
         saveCart();
         renderCart();
@@ -178,6 +233,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
             }
+        } else if (type === 'services') {
+            const item = cart.services.find(item => item.id === id);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    removeFromCart('services', id);
+                    return;
+                }
+            }
         }
         saveCart();
         renderCart();
@@ -192,13 +256,16 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.rooms.forEach(item => {
             total += item.price * item.nights;
         });
+        cart.services.forEach(item => {
+            total += item.price * item.quantity;
+        });
         return total.toFixed(2);
     };
 
     // --- Render Cart ---
     const renderCart = () => {
-        const foodContainer = document.getElementById('food');
-        const roomsContainer = document.getElementById('rooms');
+        const foodContainer = document.getElementById('cart-food');
+        const roomsContainer = document.getElementById('cart-rooms');
         const totalPrice = document.getElementById('cart-total-price');
 
         // Render Food Items
@@ -242,6 +309,31 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button class="qty-btn plus" data-type="rooms" data-id="${item.id}">+</button>
                         </div>
                         <button class="remove-btn" data-type="rooms" data-id="${item.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Render Services
+        const servicesContainer = document.getElementById('cart-services');
+        if (servicesContainer) {
+            if (cart.services.length === 0) {
+                servicesContainer.innerHTML = '<p class="cart-empty">You have no services booked.</p>';
+            } else {
+                servicesContainer.innerHTML = cart.services.map(item => `
+                    <div class="cart-item" data-id="${item.id}">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="cart-item-controls">
+                            <button class="qty-btn minus" data-type="services" data-id="${item.id}">-</button>
+                            <span class="qty-value">${item.quantity}</span>
+                            <button class="qty-btn plus" data-type="services" data-id="${item.id}">+</button>
+                        </div>
+                        <button class="remove-btn" data-type="services" data-id="${item.id}">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
@@ -297,7 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let badge = cartIconContainer.querySelector('.cart-badge');
         const totalItems = cart.food.reduce((sum, item) => sum + item.quantity, 0) +
-                          cart.rooms.reduce((sum, item) => sum + item.nights, 0);
+                          cart.rooms.reduce((sum, item) => sum + item.nights, 0) +
+                          cart.services.reduce((sum, item) => sum + item.quantity, 0);
 
         if (totalItems > 0) {
             if (!badge) {
@@ -368,14 +461,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Service bookings (Book Service buttons)
+    document.querySelectorAll('.btn-book-service').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const serviceItem = btn.closest('.service-item');
+            if (serviceItem) {
+                const id = serviceItem.dataset.serviceId;
+                const name = serviceItem.dataset.serviceName;
+                const price = serviceItem.dataset.servicePrice;
+                addServiceToCart(id, name, price);
+            }
+        });
+    });
+
     // --- Checkout Modal Functions ---
     const showCheckoutModal = () => {
         const foodTotal = cart.food.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         const roomsTotal = cart.rooms.reduce((sum, item) => sum + (item.price * item.nights), 0);
-        const grandTotal = foodTotal + roomsTotal;
+        const servicesTotal = cart.services.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const grandTotal = foodTotal + roomsTotal + servicesTotal;
 
         let foodItemsHTML = '';
         let roomItemsHTML = '';
+        let servicesItemsHTML = '';
 
         if (cart.food.length > 0) {
             foodItemsHTML = `
@@ -419,6 +528,27 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
+        if (cart.services.length > 0) {
+            servicesItemsHTML = `
+                <div class="checkout-section services">
+                    <div class="checkout-section-title">
+                        <i class="fas fa-spa"></i> Services
+                    </div>
+                    ${cart.services.map(item => `
+                        <div class="checkout-item">
+                            <span class="checkout-item-name">${item.name}</span>
+                            <span class="checkout-item-qty">x${item.quantity}</span>
+                            <span class="checkout-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                    `).join('')}
+                    <div class="checkout-subtotal">
+                        <span>Subtotal</span>
+                        <span>$${servicesTotal.toFixed(2)}</span>
+                    </div>
+                </div>
+            `;
+        }
+
         const modalHTML = `
             <div class="checkout-modal-overlay" id="checkoutModal">
                 <div class="checkout-modal">
@@ -429,6 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="checkout-modal-body">
                         ${foodItemsHTML}
                         ${roomItemsHTML}
+                        ${servicesItemsHTML}
                     </div>
                     <div class="checkout-modal-footer">
                         <div class="checkout-total">
@@ -516,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeCheckoutModal();
 
         // Clear cart after checkout
-        cart = { food: [], rooms: [] };
+        cart = { food: [], rooms: [], services: [] };
         saveCart();
         renderCart();
         closeCart();
@@ -531,7 +662,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.querySelector('.checkout-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
-            if (cart.food.length === 0 && cart.rooms.length === 0) {
+            if (cart.food.length === 0 && cart.rooms.length === 0 && cart.services.length === 0) {
                 showNotification('Your cart is empty!');
                 return;
             }

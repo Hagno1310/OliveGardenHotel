@@ -51,34 +51,37 @@
     <section id="services" class="services-section">
         <div class="section-content-wrapper">
             <h2 class="section-title">Our Services</h2>
-            <div class="service-item">
+            <div class="service-item" data-service-id="s1" data-service-name="Luxury Spa Treatment" data-service-price="150">
                 <div class="service-image">
                     <img src="images/service_1.avif" alt="Service 1">
                 </div>
                 <div class="service-info">
                     <h3>Luxury Spa Treatment</h3>
+                    <p class="service-description">Indulge in a rejuvenating spa experience with aromatherapy massage, facial treatments, and access to our thermal baths.</p>
                     <p class="price">$150</p>
-                    <a href="#" class="btn">Book Now</a>
+                    <button class="btn btn-book-service">Book Service</button>
                 </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" data-service-id="s2" data-service-name="Gourmet Dining Experience" data-service-price="100">
                 <div class="service-image">
                     <img src="images/sevice_2.avif" alt="Service 2">
                 </div>
                 <div class="service-info">
                     <h3>Gourmet Dining Experience</h3>
+                    <p class="service-description">A five-course Mediterranean feast prepared by our executive chef, paired with premium wines from local vineyards.</p>
                     <p class="price">$100</p>
-                    <a href="#" class="btn">Book Now</a>
+                    <button class="btn btn-book-service">Book Service</button>
                 </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" data-service-id="s3" data-service-name="Private Pool Access" data-service-price="250">
                 <div class="service-image">
                     <img src="images/service_3.avif" alt="Service 3">
                 </div>
                 <div class="service-info">
                     <h3>Private Pool Access</h3>
+                    <p class="service-description">Exclusive access to our private infinity pool with cabana service, refreshments, and stunning garden views.</p>
                     <p class="price">$250</p>
-                    <a href="#" class="btn">Book Now</a>
+                    <button class="btn btn-book-service">Book Service</button>
                 </div>
             </div>
         </div>
@@ -160,15 +163,19 @@
             <button class="close-cart-btn">&times;</button>
         </div>
         <div class="cart-tabs">
-            <button class="tab-link active" data-tab="food">Food</button>
-            <button class="tab-link" data-tab="rooms">Rooms</button>
+            <button class="tab-link active" data-tab="cart-food">Food</button>
+            <button class="tab-link" data-tab="cart-rooms">Rooms</button>
+            <button class="tab-link" data-tab="cart-services">Services</button>
         </div>
         <div class="cart-content">
-            <div id="food" class="tab-content active">
+            <div id="cart-food" class="tab-content active">
                 <p class="cart-empty">Your food cart is empty.</p>
             </div>
-            <div id="rooms" class="tab-content">
+            <div id="cart-rooms" class="tab-content">
                 <p class="cart-empty">You have no rooms booked.</p>
+            </div>
+            <div id="cart-services" class="tab-content">
+                <p class="cart-empty">You have no services booked.</p>
             </div>
         </div>
         <div class="cart-footer">
