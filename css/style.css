@@ -1118,58 +1118,86 @@ footer {
 .checkout-modal-body {
     padding: 1.5rem;
     overflow-y: auto;
+    overflow-x: hidden;
     flex: 1;
     min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #8a9a5b #3a3929;
 }
 
-/* Custom Scrollbar for Modal */
+/* Custom Scrollbar - Global Styles for Chrome/Safari/Edge */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #8a9a5b #3a3929;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #3a3929;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #8a9a5b;
+    border-radius: 10px;
+    border: 2px solid #3a3929;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #9aaa6b;
+}
+
+*::-webkit-scrollbar-corner {
+    background: #3a3929;
+}
+
+/* Modal specific scrollbar */
 .checkout-modal-body::-webkit-scrollbar {
     width: 8px;
 }
 
 .checkout-modal-body::-webkit-scrollbar-track {
     background: #3a3929;
-    border-radius: 10px;
+    border-radius: 0;
+    margin: 5px 0;
 }
 
 .checkout-modal-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #8a9a5b 0%, #6b7a4a 100%);
+    background: #8a9a5b;
     border-radius: 10px;
     border: 2px solid #3a3929;
 }
 
 .checkout-modal-body::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #9aaa6b 0%, #7b8a5a 100%);
-}
-
-/* Firefox scrollbar */
-.checkout-modal-body {
-    scrollbar-width: thin;
-    scrollbar-color: #8a9a5b #3a3929;
+    background: #9aaa6b;
 }
 
 /* Cart content scrollbar */
+.cart-content {
+    scrollbar-width: thin;
+    scrollbar-color: #f2f0c4 #3a3929;
+}
+
 .cart-content::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .cart-content::-webkit-scrollbar-track {
     background: #3a3929;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .cart-content::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #f2f0c4 0%, #d9d592 100%);
+    background: #f2f0c4;
     border-radius: 10px;
+    border: 2px solid #3a3929;
 }
 
 .cart-content::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #fff 0%, #f2f0c4 100%);
-}
-
-.cart-content {
-    scrollbar-width: thin;
-    scrollbar-color: #f2f0c4 #3a3929;
+    background: #fff;
 }
 
 .checkout-section {
