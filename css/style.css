@@ -955,7 +955,7 @@ footer {
     top: 0;
     height: 100%;
     width: 4px;
-    background: linear-gradient(180deg, #8a9a5b 0%, #6b7a4a 100%);
+    background: linear-gradient(180deg, #f2f0c4 0%, #d9d592 100%);
     border-radius: 4px 0 0 4px;
 }
 
@@ -983,7 +983,7 @@ footer {
 .cart-item-price {
     margin: 0;
     font-size: 0.9em;
-    color: #8a9a5b;
+    color: #f2f0c4;
     font-weight: 500;
 }
 
@@ -1389,27 +1389,27 @@ footer {
     box-shadow: 0 6px 20px rgba(242, 240, 196, 0.3);
 }
 
-/* Room items in cart - different accent color */
+/* Room items in cart - yellow accent */
 #cart-rooms .cart-item::before {
-    background: linear-gradient(180deg, #e07a5f 0%, #c9564a 100%);
+    background: linear-gradient(180deg, #f2f0c4 0%, #d9d592 100%);
 }
 
 #cart-rooms .cart-item-price {
-    color: #e07a5f;
+    color: #f2f0c4;
 }
 
-/* Services items in cart - purple accent */
+/* Services items in cart - yellow accent */
 #cart-services .cart-item::before {
-    background: linear-gradient(180deg, #9b59b6 0%, #8e44ad 100%);
+    background: linear-gradient(180deg, #f2f0c4 0%, #d9d592 100%);
 }
 
 #cart-services .cart-item-price {
-    color: #9b59b6;
+    color: #f2f0c4;
 }
 
 /* Services section in checkout modal */
 .checkout-section.services .checkout-item-price {
-    color: #9b59b6;
+    color: #f2f0c4;
 }
 
 /* Cart empty state styling */
