@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Rooms - Olive Garden Hotel</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 95C74.8528 95 95 74.8528 95 50C95 25.1472 74.8528 5 50 5C25.1472 5 5 25.1472 5 50C5 74.8528 25.1472 95 50 95Z" fill="#8A9A5B"/>
+                    <path d="M70 30C72.5 27.5 75 25 78 22" stroke="#556B2F" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <span>Olive Garden Hotel</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#welcome">Welcome</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="book-table.html">Book table</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">More</a>
+                    <div class="dropdown-content">
+                        <a href="rooms.html">Book Online</a>
+                        <a href="experiences.html">Experience</a>
+                        <a href="menu.html">Menu</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="rooms-page-section">
+            <div class="section-content-wrapper">
+                <h2 class="section-title">Our Rooms</h2>
+                <p class="category-description">Discover a place where comfort and Mediterranean style meet.</p>
+                
+                <div class="rooms-container">
+                    <!-- Room Card 1 -->
+                    <div class="room-card" data-room-id="1" data-room-name="Deluxe Garden View" data-room-price="180">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=250&fit=crop" alt="Deluxe Garden View Room">
+                        <div class="room-card-content">
+                            <h3>Deluxe Garden View</h3>
+                            <p>Wake up to the gentle rustle of olive trees and Mediterranean flora. This elegantly appointed room features floor-to-ceiling windows, a private balcony with garden views, premium linens, and a spa-inspired bathroom with rain shower.</p>
+                            <ul>
+                                <li><i class="fas fa-ruler-combined"></i> 35 sqm</li>
+                                <li><i class="fas fa-bed"></i> 1 King Bed</li>
+                                <li><i class="fas fa-users"></i> 2 Guests</li>
+                                <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                            </ul>
+                            <p class="room-price">$180 / night</p>
+                            <button class="btn btn-book-room">Book Room</button>
+                        </div>
+                    </div>
+                    <!-- Room Card 2 -->
+                    <div class="room-card" data-room-id="2" data-room-name="Mediterranean Suite" data-room-price="320">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=250&fit=crop" alt="Mediterranean Suite">
+                        <div class="room-card-content">
+                            <h3>Mediterranean Suite</h3>
+                            <p>Indulge in our signature suite featuring a separate living area adorned with handcrafted furnishings. Enjoy a marble bathroom with soaking tub, walk-in closet, private terrace, and complimentary minibar stocked with local delicacies.</p>
+                            <ul>
+                                <li><i class="fas fa-ruler-combined"></i> 55 sqm</li>
+                                <li><i class="fas fa-bed"></i> 1 King Bed</li>
+                                <li><i class="fas fa-users"></i> 2-4 Guests</li>
+                                <li><i class="fas fa-concierge-bell"></i> Butler Service</li>
+                            </ul>
+                            <p class="room-price">$320 / night</p>
+                            <button class="btn btn-book-room">Book Room</button>
+                        </div>
+                    </div>
+                    <!-- Room Card 3 -->
+                    <div class="room-card" data-room-id="3" data-room-name="Family Garden Bungalow" data-room-price="450">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=250&fit=crop" alt="Family Garden Bungalow">
+                        <div class="room-card-content">
+                            <h3>Family Garden Bungalow</h3>
+                            <p>A charming standalone bungalow perfect for families, featuring two bedrooms connected by a cozy living space. Step outside to your private patio with garden access, outdoor seating, and direct views of our tranquil olive grove.</p>
+                            <ul>
+                                <li><i class="fas fa-ruler-combined"></i> 70 sqm</li>
+                                <li><i class="fas fa-bed"></i> 2 Queen Beds</li>
+                                <li><i class="fas fa-users"></i> 4-5 Guests</li>
+                                <li><i class="fas fa-tree"></i> Private Garden</li>
+                            </ul>
+                            <p class="room-price">$450 / night</p>
+                            <button class="btn btn-book-room">Book Room</button>
+                        </div>
+                    </div>
+                    <!-- Room Card 4 -->
+                    <div class="room-card" data-room-id="4" data-room-name="Honeymoon Retreat" data-room-price="380">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop" alt="Honeymoon Retreat">
+                        <div class="room-card-content">
+                            <h3>Honeymoon Retreat</h3>
+                            <p>Romance awaits in this intimate sanctuary designed for couples. Features a canopy bed with silk drapes, private jacuzzi on the balcony, champagne upon arrival, and breathtaking sunset views over the Mediterranean landscape.</p>
+                            <ul>
+                                <li><i class="fas fa-ruler-combined"></i> 45 sqm</li>
+                                <li><i class="fas fa-bed"></i> 1 King Bed</li>
+                                <li><i class="fas fa-users"></i> 2 Guests</li>
+                                <li><i class="fas fa-hot-tub"></i> Private Jacuzzi</li>
+                            </ul>
+                            <p class="room-price">$380 / night</p>
+                            <button class="btn btn-book-room">Book Room</button>
+                        </div>
+                    </div>
+                    <!-- Room Card 5 -->
+                    <div class="room-card" data-room-id="5" data-room-name="Executive Pool Villa" data-room-price="650">
+                        <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=400&h=250&fit=crop" alt="Executive Pool Villa">
+                        <div class="room-card-content">
+                            <h3>Executive Pool Villa</h3>
+                            <p>The pinnacle of luxury living with your own private infinity pool overlooking the gardens. This villa includes a full kitchen, dining area, home theater system, and dedicated concierge service for an unparalleled stay.</p>
+                            <ul>
+                                <li><i class="fas fa-ruler-combined"></i> 120 sqm</li>
+                                <li><i class="fas fa-bed"></i> 2 King Beds</li>
+                                <li><i class="fas fa-users"></i> 4 Guests</li>
+                                <li><i class="fas fa-swimming-pool"></i> Private Pool</li>
+                            </ul>
+                            <p class="room-price">$650 / night</p>
+                            <button class="btn btn-book-room">Book Room</button>
+                        </div>
+                    </div>
+                    <!-- Room Card 6 -->
+                    <div class="room-card" data-room-id="6" data-room-name="Cozy Standard Room" data-room-price="120">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=250&fit=crop" alt="Cozy Standard Room">
+                        <div class="room-card-content">
+                            <h3>Cozy Standard Room</h3>
+                            <p>Comfort meets affordability in our thoughtfully designed standard room. Enjoy modern amenities, a comfortable workspace, blackout curtains for restful sleep, and all the essentials for a pleasant Mediterranean getaway.</p>
+                            <ul>
+                                <li><i class="fas fa-ruler-combined"></i> 25 sqm</li>
+                                <li><i class="fas fa-bed"></i> 1 Queen Bed</li>
+                                <li><i class="fas fa-users"></i> 2 Guests</li>
+                                <li><i class="fas fa-coffee"></i> Coffee Maker</li>
+                            </ul>
+                            <p class="room-price">$120 / night</p>
+                            <button class="btn btn-book-room">Book Room</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-separator"><div class="section-content-wrapper">Olive Garden Hotel</div></div>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3 class="logo-text">Olive Garden</h3>
+                <p>
+                    Olive Garden is a hotel inspired by the Mediterranean, offering a green and serene escape for all our guests.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; info@olivegarden.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contact us</h3>
+                <form action="index.html" method="post">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; olivegarden.com | Designed by You
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Panel -->
+    <div class="cart-overlay"></div>
+    <div class="cart-panel">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-tabs">
+            <button class="tab-link active" data-tab="food">Food</button>
+            <button class="tab-link" data-tab="rooms">Rooms</button>
+        </div>
+        <div class="cart-content">
+            <div id="food" class="tab-content active">
+                <p class="cart-empty">Your food cart is empty.</p>
+            </div>
+            <div id="rooms" class="tab-content">
+                <p class="cart-empty">You have no rooms booked.</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong> <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

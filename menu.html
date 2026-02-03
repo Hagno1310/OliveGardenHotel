@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Olive Garden Hotel</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 95C74.8528 95 95 74.8528 95 50C95 25.1472 74.8528 5 50 5C25.1472 5 5 25.1472 5 50C5 74.8528 25.1472 95 50 95Z" fill="#8A9A5B"/>
+                    <path d="M70 30C72.5 27.5 75 25 78 22" stroke="#556B2F" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <span>Olive Garden Hotel</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#welcome">Welcome</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="book-table.html">Book table</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">More</a>
+                    <div class="dropdown-content">
+                        <a href="rooms.html">Book Online</a>
+                        <a href="experiences.html">Experience</a>
+                        <a href="menu.html">Menu</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu-page-section">
+            <div class="section-content-wrapper">
+                
+                <!-- Appetizers Section -->
+                <div class="menu-category">
+                    <h2 class="section-title">Appetizers</h2>
+                    <p class="category-description">Start your meal with our fresh and flavorful Mediterranean appetizers.</p>
+                    <div class="menu-items-container">
+                        <div class="menu-item-card" data-item-id="a1" data-item-name="Artisan Bread & Dips" data-item-price="10">
+                            <img src="images/khaivi-1.avif" alt="Artisan Bread and Dips">
+                            <h3>Artisan Bread & Dips</h3>
+                            <p class="menu-item-description">A selection of our house-baked breads served with olive oil and herb dips.</p>
+                            <div class="item-tags">
+                                <span>Vegetarian</span>
+                            </div>
+                            <p class="menu-item-price">$10</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="a2" data-item-name="Garden Green Salad" data-item-price="11">
+                            <img src="images/khaivi-2.avif" alt="Garden Green Salad">
+                            <h3>Garden Green Salad</h3>
+                            <p class="menu-item-description">Fresh greens and seasonal vegetables from our garden with a light vinaigrette.</p>
+                             <div class="item-tags">
+                                <span>Vegan</span>
+                                <span>Gluten-Free</span>
+                            </div>
+                            <p class="menu-item-price">$11</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="a3" data-item-name="Tuna Sashimi" data-item-price="18">
+                            <img src="images/khaivi-3.avif" alt="Tuna Sashimi">
+                            <h3>Tuna Sashimi</h3>
+                            <p class="menu-item-description">Fresh, high-grade tuna served with wasabi and soy sauce.</p>
+                            <div class="item-tags">
+                                <span>Contains Seafood</span>
+                                <span>Gluten-Free</span>
+                            </div>
+                            <p class="menu-item-price">$18</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Courses Section -->
+                <div class="menu-category">
+                    <h2 class="section-title">Main Courses</h2>
+                    <p class="category-description">Hearty and satisfying main courses inspired by the shores of the Mediterranean.</p>
+                    <div class="menu-items-container">
+                        <div class="menu-item-card" data-item-id="m1" data-item-name="Fisherman's Catch of the Day" data-item-price="32">
+                            <img src="images/monchinh1.avif" alt="Fish">
+                            <h3>Fisherman's Catch of the Day</h3>
+                            <p class="menu-item-description">Locally sourced fish, pan-seared and served with a lemon-dill sauce.</p>
+                            <p class="menu-item-price">$32</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="m2" data-item-name="Grove-crusted Sirloin Steak" data-item-price="38">
+                            <img src="images/monchinh2.avif" alt="Steak">
+                            <h3>Grove-crusted Sirloin Steak</h3>
+                            <p class="menu-item-description">A tender sirloin with a crust of crushed peanuts and herbs.</p>
+                            <p class="menu-item-price">$38</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="m3" data-item-name="The Grove Burger" data-item-price="22">
+                            <img src="images/monchinh3.avif" alt="Burger">
+                            <h3>The Grove Burger</h3>
+                            <p class="menu-item-description">Our classic all-beef burger with fresh greens, tomato, and a secret sauce.</p>
+                            <p class="menu-item-price">$22</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="m4" data-item-name="Golden Herb-Crusted Schnitzel" data-item-price="29">
+                            <img src="images/monchinh4.avif" alt="Schnitzel">
+                            <h3>Golden Herb-Crusted Schnitzel</h3>
+                            <p class="menu-item-description">A crispy breaded cutlet of veal, served with a refreshing cucumber salad.</p>
+                            <p class="menu-item-price">$29</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="m5" data-item-name="Ribeye Steak" data-item-price="40">
+                            <img src="images/monchinh5.avif" alt="Steak">
+                            <h3>Ribeye Steak</h3>
+                            <p class="menu-item-description">A 12oz ribeye steak cooked to your liking, served with roasted vegetables.</p>
+                            <p class="menu-item-price">$40</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="m6" data-item-name="Mushroom Risotto" data-item-price="24">
+                            <img src="images/monchinh6.avif" alt="Risotto">
+                            <h3>Mushroom Risotto</h3>
+                            <p class="menu-item-description">Creamy Arborio rice with wild mushrooms, parmesan cheese, and truffle oil.</p>
+                            <p class="menu-item-price">$24</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts Section -->
+                <div class="menu-category">
+                    <h2 class="section-title">Desserts</h2>
+                    <p class="category-description">End your meal on a sweet note with our decadent, house-made desserts.</p>
+                    <div class="menu-items-container">
+                        <div class="menu-item-card" data-item-id="d1" data-item-name="Artisanal Date Gelato" data-item-price="10">
+                            <img src="images/trangmieng1.avif" alt="Gelato">
+                            <h3>Artisanal Date Gelato</h3>
+                            <p class="menu-item-description">Sweet and sticky date-infused gelato, made in-house.</p>
+                            <p class="menu-item-price">$10</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="d2" data-item-name="Pasture Cheesecake with Berry Compote" data-item-price="13">
+                            <img src="images/trangmieng2.avif" alt="Cheesecake">
+                            <h3>Pasture Cheesecake with Berry Compote</h3>
+                            <p class="menu-item-description">A classic creamy cheesecake made with locally sourced dairy.</p>
+                            <p class="menu-item-price">$13</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="d3" data-item-name="Sunshine Lemon Meringue Tart" data-item-price="12">
+                            <img src="images/trangmieng3.avif" alt="Tart">
+                            <h3>Sunshine Lemon Meringue Tart</h3>
+                            <p class="menu-item-description">A zesty lemon tart topped with light and fluffy meringue.</p>
+                            <p class="menu-item-price">$12</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="d4" data-item-name="Velvet Cacao Mousse" data-item-price="11">
+                            <img src="images/trangmieng4.avif" alt="Mousse">
+                            <h3>Velvet Cacao Mousse</h3>
+                            <p class="menu-item-description">A light and airy mousse made from rich, dark cacao.</p>
+                            <p class="menu-item-price">$11</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="d5" data-item-name="Harvest Carrot Cake" data-item-price="12">
+                            <img src="images/trangmieng5.avif" alt="Carrot Cake">
+                            <h3>Harvest Carrot Cake</h3>
+                            <p class="menu-item-description">Moist and flavorful carrot cake with a cream cheese frosting.</p>
+                            <p class="menu-item-price">$12</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                        <div class="menu-item-card" data-item-id="d6" data-item-name="Flourless Chocolate Lava Cake" data-item-price="14">
+                            <img src="images/trangmieng6.avif" alt="Chocolate Cake">
+                            <h3>Flourless Chocolate Lava Cake</h3>
+                            <p class="menu-item-description">A rich, gluten-free chocolate cake with a molten center.</p>
+                            <p class="menu-item-price">$14</p>
+                            <button class="btn btn-menu-item btn-add-food">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-separator"><div class="section-content-wrapper">Olive Garden Hotel</div></div>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3 class="logo-text">Olive Garden</h3>
+                <p>
+                    Olive Garden is a hotel inspired by the Mediterranean, offering a green and serene escape for all our guests.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; info@olivegarden.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contact us</h3>
+                <form action="index.html" method="post">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; olivegarden.com | Designed by You
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <!-- Shopping Cart Panel -->
+    <div class="cart-overlay"></div>
+    <div class="cart-panel">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-tabs">
+            <button class="tab-link active" data-tab="food">Food</button>
+            <button class="tab-link" data-tab="rooms">Rooms</button>
+        </div>
+        <div class="cart-content">
+            <div id="food" class="tab-content active">
+                <p class="cart-empty">Your food cart is empty.</p>
+            </div>
+            <div id="rooms" class="tab-content">
+                <p class="cart-empty">You have no rooms booked.</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong> <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn checkout-btn">Checkout</button>
+        </div>
+    </div>
+</body>
+</html>
